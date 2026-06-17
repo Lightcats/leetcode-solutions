@@ -41,7 +41,7 @@ You can return the answer in any order.
 
 ### solution 1: brute force
 
-> **解析：** 因为题目中说明只存在一种答案，所以暴力将所有情况遍历一遍，用两层 for 循环列举所有情况，遇到 $$num_i + num_j == target$$ 时返回 $\{i, j\}$。
+> **解析：** 因为题目中说明只存在一种答案，所以暴力将所有情况遍历一遍，用两层 for 循环列举所有情况，遇到 $num_i + num_j == target$ 时返回 $\{i, j\}$。
 
 **代码文件：**
 

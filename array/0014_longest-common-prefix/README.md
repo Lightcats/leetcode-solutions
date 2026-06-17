@@ -25,3 +25,13 @@ If there is no common prefix, return an empty string `""`.
 - $1 <= strs.length <= 200$
 - $0 <= strs[i].length <= 200$
 - `strs[i]` consists of only lowercase English letters if it is non-empty.
+
+---
+
+## Solution 1: brute force
+
+> **Explanation:** To find the longest common prefix, the simplest approach is to traverse all words sequentially by comparing characters at the same index one by one. If all characters match at the current index, increment `common_len` by 1; otherwise, break the loop.
+
+**Code:**
+
+- **C++:** [cpp/solution_brute-force.cpp](cpp/solution_brute-force.cpp)

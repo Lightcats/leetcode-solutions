@@ -6,7 +6,7 @@
 
 | Category | Solved |
 |----------|--------|
-| Array | 1 |
-| **Total** | **1** |
+| Array | 2 |
+| **Total** | **2** |
 
 - **Last update:** 2026-06-17

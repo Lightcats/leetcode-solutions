@@ -43,6 +43,20 @@ You can return the answer in any order.
 
 > **Explanation:** Since the problem guarantees that there is exactly one valid answer, we can simply traverse all possible pairs using two nested `for` loops. Once we find a pair where $num_i + num_j == target$, we return $\{i, j\}$.
 
+- **Time complexity:** $O(n^2)$
+
 **Code:**
 
 - C++: [cpp/solution_brute-force.cpp](./cpp/solution_brute-force.cpp)
+
+---
+
+### solution 2: hash table
+
+> **Explanation:** When iterating through `nums` in the first loop, since we know the `target`, the other number we need is `target - num`. Using a hash table to look it up reduces the time complexity from $O(n)$ to $O(1)$ for the inner search.
+
+- **Time complexity:** $O(n)$
+
+- C++: [py/solution_hash-table.py](py/solution_hash-table.py)
+
+---

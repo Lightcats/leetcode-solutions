@@ -34,4 +34,4 @@ If there is no common prefix, return an empty string `""`.
 
 **Code:**
 
-- **C++:** [cpp/solution_brute-force.cpp](cpp/solution_brute-force.cpp)
+- **C++:** [cpp/solution_brute_force.cpp](cpp/solution_brute_force.cpp)

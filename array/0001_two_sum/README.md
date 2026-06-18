@@ -47,7 +47,7 @@ You can return the answer in any order.
 
 **Code:**
 
-- C++: [cpp/solution_brute-force.cpp](./cpp/solution_brute-force.cpp)
+- C++: [cpp/solution_brute_force.cpp](./cpp/solution_brute_force.cpp)
 
 ---
 
@@ -57,6 +57,6 @@ You can return the answer in any order.
 
 - **Time complexity:** $O(n)$
 
-- C++: [py/solution_hash-table.py](py/solution_hash-table.py)
+- C++: [py/solution_hash_table.py](py/solution_hash_table.py)
 
 ---

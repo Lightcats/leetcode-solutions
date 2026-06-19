@@ -23,3 +23,11 @@ Given two binary strings `a` and `b`, return their sum as a binary string.
 - Each string does not contain leading zeros except for the zero itself.
 
 ---
+
+### solution 1:
+
+> **Explanation:** Simply add a couple of reversed numbers digit by digit.
+
+**Code:** 
+
+- **Python:** [py/solution.py](py/solution.py)

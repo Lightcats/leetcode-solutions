@@ -7,6 +7,7 @@
 | Category | Solved |
 |----------|--------|
 | Array | 2 |
-| **Total** | **2** |
+| String | 1 |
+| **Total** | **3** |
 
-- **Last update:** 2026-06-17
+- **Last update:** 2026-06-20

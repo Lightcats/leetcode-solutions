@@ -2,12 +2,10 @@
 
 - My solutions to LeetCode problems, written in C++ & Python.
 
-## Progress
+## 进度
 
-| Category | Solved |
+| 类别 | 解答数 |
 |----------|--------|
 | Array | 2 |
 | String | 1 |
-| **Total** | **3** |
-
-- **Last update:** 2026-06-20
+| **总计** | **3** |

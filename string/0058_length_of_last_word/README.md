@@ -1,6 +1,6 @@
-# 28. 找出字符串中第一个匹配项的下标
+# 58. 最后一个单词的长度
 
-[题目链接](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+[题目链接](https://leetcode.cn/problems/length-of-last-word/)
 
 给你一个字符串 `s`，由若干单词组成，单词前后用一些空格字符隔开。返回字符串中 **最后一个** 单词的长度。
 

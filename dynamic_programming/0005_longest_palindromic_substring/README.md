@@ -29,9 +29,9 @@
 
 ---
 
-### 想法1：动态规划
+### 解法1：动态规划
 
-对于一个字符串`S`而言，如果它是回文串，那么其首位再加上相同的字符也同样是回文串，如`aba`是回文串，那么`cabac`也是回文串。
+对于一个字符串`S`而言，如果它是回文串，那么其首尾再加上相同的字符也同样是回文串，如`aba`是回文串，那么`cabac`也是回文串。
 
 按照这样的思路可以使用动态规划解决，下面给出状态转移方程。
 
@@ -112,3 +112,61 @@ public:
         return s.substr(ans_i, ans_len);
     }
 };
+```
+
+---
+
+### 解法2：中心扩散法（zhouye提供）
+
+对于回文串来说，可以按照 **对称位置** 分为两种情况：
+
+- **中心对称：** 如 `aba` ， `abcba` 等。
+- **镜面对称：** 如 `abba` ， `abccba` 等。
+
+因此我们可以通过确定 **中心位置** 来暴力遍历所有符合条件的字符串。
+
+中心位置同对称位置分为两种， `单字符` 和 `双字符` ，用 `left` 和 `right` 来指向中心位置的首尾索引。
+
+$$
+right = 
+\begin{cases}
+left, & 单字符 \\
+left + 1, & 双字符 \\
+\end{cases}
+$$
+
+遍历中心起始位置 `left` ，按照中心位置向两边扩散，每次扩散时判断首尾两个字符是否相同，相同则继续扩散，不相同则停止扩散。
+
+- **单字符（中心对称）：** `a` 然后向两边扩散，如 `bab` ， `cbabc` 。
+- **双字符（镜面对称）：** `aa` 然后向两边扩散，如 `baab` ， `cbaabc` 。
+
+相关AC代码如下：
+
+```cpp
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        string maxstr = "";
+		for (int i = 0; i < s.size(); i++) {
+			string x = huiwen(s, i, i);
+			string y = huiwen(s, i, i + 1);
+			if (x.size() > maxstr.size()) {
+				maxstr = x;
+			} 
+			if (y.size() > maxstr.size()) {
+				maxstr = y;
+			} 
+		}
+		return maxstr;
+	}
+    string huiwen(string s, int l, int r) {
+		while (l >= 0 && r < s.size() && s[l] == s[r]) {
+			l--;
+			r++;
+		}
+		return s.substr(l + 1, r - l - 1);
+	}
+};
+```
+
+---

@@ -148,8 +148,8 @@ public:
     string longestPalindrome(string s) {
         string maxstr = "";
 		for (int i = 0; i < s.size(); i++) {
-			string x = huiwen(s, i, i);
-			string y = huiwen(s, i, i + 1);
+			string x = huiwen(s, i, i); // 中心对称
+			string y = huiwen(s, i, i + 1); // 镜面对称
 			if (x.size() > maxstr.size()) {
 				maxstr = x;
 			} 
@@ -160,13 +160,38 @@ public:
 		return maxstr;
 	}
     string huiwen(string s, int l, int r) {
-		while (l >= 0 && r < s.size() && s[l] == s[r]) {
+		while (l >= 0 && r < s.size() && s[l] == s[r]) { 
 			l--;
-			r++;
+			r++; // 扩散
 		}
 		return s.substr(l + 1, r - l - 1);
 	}
 };
 ```
 
----
+然而，聪明的你可以想到，我们可以通过每两个字符之间插入同一字符把镜面对称给转化成中心对称来减轻负担。
+
+如：
+
+- `abccba` 变成 `#a#b#c#c#b#a#` 。
+- `abcba` 变成 `#a#b#c#b#a#` 。
+
+优化后的 **python** 代码如下：
+
+```python
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        t = "#" + "#".join(s) + "#"
+        n = len(t)
+        maxstr = ""
+        for i in range(n):
+            l, r = i, i
+            while l >= 0 and r < n and t[l] == t[r]:
+                l -= 1
+                r += 1
+            start = (l + 1) // 2
+            length = (r - l - 2) // 2
+            if length > len(maxstr):
+                maxstr = s[start:start + length]
+        return maxstr
+```

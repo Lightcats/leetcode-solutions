@@ -186,11 +186,11 @@ class Solution:
         maxstr = ""
         for i in range(n):
             l, r = i, i
-            while l >= 0 and r < n and t[l] == t[r]:
+            while l > 0 and r < n - 1 and t[l - 1] == t[r + 1]:
                 l -= 1
                 r += 1
-            start = (l + 1) // 2
-            length = (r - l - 2) // 2
+            start = l // 2
+            length = (r - l) // 2
             if length > len(maxstr):
                 maxstr = s[start:start + length]
         return maxstr
